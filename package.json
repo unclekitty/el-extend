@@ -1,10 +1,10 @@
 {
   "name": "el-extend",
-  "description": "ex-datepicker",
+  "description": "el-extend",
   "version": "1.0.0",
   "author": "吴君 <jun.wu1@baozun.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "dist/el-extend.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -37,5 +37,9 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unclekitty/el-extend.git"
   }
 }
