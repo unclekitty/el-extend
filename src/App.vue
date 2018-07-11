@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import DatePicker from './components/DatePicker'
+import DatePicker from '@/components/DatePicker'
 export default {
   name: 'app',
   components: {

@@ -1,10 +1,8 @@
-import DatePicker from '@components/DatePicker'
+import Vue from 'vue'
+import App from './App.vue'
+import 'element-ui/lib/theme-chalk/index.css'
 
-const install = function (Vue) {
-  Vue.component(DatePicker.name, DatePicker)
-}
-
-export default {
-  version: '1.0.10',
-  install
-}
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
