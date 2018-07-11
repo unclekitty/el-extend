@@ -1,6 +1,6 @@
 <template>
   <div class="picker-wrap">
-    <el-autocomplete
+    <el-input
       class="el-input el-date-editor"
       :class="'el-date-editor--' + type"
       :readonly="!editable || readonly"
@@ -12,8 +12,7 @@
       :value="displayValue"
       :validateEvent="false"
       :prefix-icon="triggerClass"
-      :fetch-suggestions="suggestions"
-      :trigger-on-focus="!pickerVisible"
+      v-clickoutside="handleClose"
       @focus="handleFocus"
       @keydown.native="handleKeydown"
       @input="value => userInput = value"
@@ -22,28 +21,20 @@
       @change.native="handleChange"
       @select="handleSelect"
       ref="reference">
-      <template slot-scope="props">
-        <div class="name">{{ props.item.text }}</div>
-      </template>
       <i slot="suffix"
         class="el-input__icon"
         @click="handleClickIcon"
         :class="{ 'el-icon-circle-close': showClose }"
         v-if="haveTrigger">
       </i>
-    </el-autocomplete>
+    </el-input>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
-import {
-  formatDate,
-  parseDate,
-  isDateObject,
-  getWeekNumber
-} from 'element-ui/packages/date-picker/src/util';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/packages/date-picker/src/util';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Emitter from 'element-ui/src/mixins/emitter';
 import Focus from 'element-ui/src/mixins/focus';
@@ -338,7 +329,6 @@ export default {
   },
   watch: {
     pickerVisible(val) {
-      console.log('=========================');
       if (this.readonly || this.disabled) return;
       if (val) {
         this.showPicker();
@@ -611,7 +601,7 @@ export default {
     handleFocus() {
       const type = this.type;
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
-        this.pickerVisible = false;
+        this.pickerVisible = true;
       }
       this.$emit('focus', this);
     },
@@ -789,9 +779,6 @@ export default {
       } else {
         return true;
       }
-    },
-    suggestions(_, cb) {
-      cb(this.shortcuts);
     },
     onShow() {
       let wrap = this.picker.$refs.scrollbar.wrap;

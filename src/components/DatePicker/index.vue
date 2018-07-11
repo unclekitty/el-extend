@@ -12,7 +12,7 @@
           :class="{'active': selectedIndex == index}">{{item.text}}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
-    <el-date-picker v-show="false"
+    <ex-date-picker v-show="false"
       class="m-b-24"
       placeholder="选择日期"
       ref="datePicker"
@@ -22,7 +22,7 @@
       :type="dateType"
       :picker-options="pickerOptions"
       :editable="false"
-      :shortcuts="shortcuts"></el-date-picker>
+      :shortcuts="shortcuts"></ex-date-picker>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ import ElButton from 'element-ui/packages/button'
 import ElDropdown from 'element-ui/packages/dropdown'
 import ElDropdownMenu from 'element-ui/packages/dropdown-menu'
 import ElDropdownItem from 'element-ui/packages/dropdown-item'
-import ElDatePicker from './DatePicker'
+import ExDatePicker from './DatePicker'
 
 
 const NewPopper = {
@@ -54,11 +54,11 @@ export default {
   mixins: [NewPopper],
   name: 'DatePicker',
   components: {
-    ElDatePicker,
     ElButton,
     ElDropdown,
     ElDropdownMenu,
-    ElDropdownItem
+    ElDropdownItem,
+    ExDatePicker,
   },
   directives: {
     Clickoutside

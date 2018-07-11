@@ -21,7 +21,7 @@
         :key="index"
         :class="getCellClasses(cell)">
         <div>
-          <p class="datepicker__tooltip" :class="{'visible': cell.inRange}">{{ (rangeLength + 1) + '天'}}</p>
+          <p v-if="showTips" class="datepicker__tooltip" :class="{'visible': cell.inRange}">{{ (rangeLength + 1) + '天'}}</p>
           <button>
             {{ cell.text }}
           </button>
@@ -73,6 +73,10 @@ export default {
       default: 'day'
     },
     showWeekNumber: {
+      type: Boolean,
+      default: false
+    },
+    showTips: {
       type: Boolean,
       default: false
     },
