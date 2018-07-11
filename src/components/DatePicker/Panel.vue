@@ -147,12 +147,12 @@ import {
   nextMonth
 } from 'element-ui/packages/date-picker/src/util';
 import Locale from 'element-ui/src/mixins/locale';
-import ElInput from 'element-ui/packages/input';
-import ElButton from 'element-ui/packages/button';
 import TimePicker from 'element-ui/packages/date-picker/src/panel/time';
 import YearTable from 'element-ui/packages/date-picker/src/basic/year-table';
 import MonthTable from 'element-ui/packages/date-picker/src/basic/month-table';
-import ElScrollbar from 'element-ui/packages/scrollbar';
+import ElScrollbar from 'element-ui/lib/scrollbar';
+import ElInput from 'element-ui/lib/input';
+import ElButton from 'element-ui/lib/button';
 import DateTable from './DateTable';
 
 const nextDate = date => {

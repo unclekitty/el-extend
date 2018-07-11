@@ -30,10 +30,10 @@
 import Clickoutside from 'element-ui/src/utils/clickoutside'
 import Popper from 'element-ui/src/utils/vue-popper'
 import merge from 'element-ui/src/utils/merge'
-import ElButton from 'element-ui/packages/button'
-import ElDropdown from 'element-ui/packages/dropdown'
-import ElDropdownMenu from 'element-ui/packages/dropdown-menu'
-import ElDropdownItem from 'element-ui/packages/dropdown-item'
+import ElButton from 'element-ui/lib/button'
+import ElDropdown from 'element-ui/lib/dropdown'
+import ElDropdownMenu from 'element-ui/lib/dropdown-menu'
+import ElDropdownItem from 'element-ui/lib/dropdown-item'
 import ExDatePicker from './DatePicker'
 
 

@@ -38,9 +38,8 @@ import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/p
 import Popper from 'element-ui/src/utils/vue-popper';
 import Emitter from 'element-ui/src/mixins/emitter';
 import Focus from 'element-ui/src/mixins/focus';
-import ElInput from 'element-ui/packages/input';
-import ElAutocomplete from 'element-ui/packages/autocomplete';
 import merge from 'element-ui/src/utils/merge';
+import ElInput from 'element-ui/lib/input';
 
 const NewPopper = {
   props: {
@@ -316,7 +315,7 @@ export default {
       default: () => []
     }
   },
-  components: { ElInput, ElAutocomplete },
+  components: { ElInput },
   directives: { Clickoutside },
   data() {
     return {
