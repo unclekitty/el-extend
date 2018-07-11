@@ -1,5 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 function resolve (dir) {
   return path.join(__dirname, '.', dir)
@@ -7,6 +8,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: './src/main.js',
+  externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',

@@ -5,6 +5,6 @@ const install = function (Vue) {
 }
 
 export default {
-  version: '1.0.7',
+  version: '1.0.8',
   install
 }
