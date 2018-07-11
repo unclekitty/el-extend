@@ -5,6 +5,7 @@
       placeholder="选择日期"
       ref="datePicker"
       align="right"
+      size="small"
       v-model="actValue"
       range-separator=" 至 "
       :type="'daterange'"
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import DatePicker from '@/components/DatePicker'
+import DatePicker from '@/components/DatePicker/DatePicker'
 export default {
   name: 'app',
   components: {
