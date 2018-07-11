@@ -10,7 +10,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'el-extend.js'
+    filename: 'el-extend.js',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [

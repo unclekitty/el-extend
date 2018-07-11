@@ -1,13 +1,11 @@
-const DatePicker = require('@components/DatePicker')
+import DatePicker from '@components/DatePicker'
 
 const install = function (Vue) {
   console.log(`==========${DatePicker.name}=====`, DatePicker)
   Vue.components(DatePicker.name, DatePicker)
 }
 
-module.exports = {
-  version: '1.0.4',
+export default {
+  version: '1.0.6',
   install
 }
-
-module.exports.default = module.exports;
